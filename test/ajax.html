@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax Exercise</title>
+</head>
+<body>
+	<div id="myDiv"></div>
+	<button>点击更改</button>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+	// $(function(){
+	// 	$("button").click(function(){
+	// 		var xmlhttp;
+	// 		if(window.XMLHttpRequest){
+	// 			xmlhttp=new XMLHttpRequest();
+	// 		}else{
+	// 			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	// 		}
+	// 		xmlhttp.onreadystatechange=function(){
+	// 			if(xmlhttp.readyState==4 && xmlhttp.status==200){
+	// 				$("#myDiv").html(xmlhttp.responseText);
+	// 				// $("#myDiv").html('1111111111111111');
+	// 			}
+	// 		};
+	// 		xmlhttp.open("GET","music.txt",true);
+	// 		xmlhttp.send();
+	// 	});
+	// });
+	// $(function(){
+	// 	$('button').click(function(){
+	// 		$.ajax({
+	// 			type:"GET",
+	// 			url:"music.txt",
+	// 			dataType:"json",
+	// 			success:function(data){
+	// 				var music="<ul>";
+	// 				$.each(data,function(i, n){
+	// 					music+="<li>"+n["optionValue"]+"</li>";
+	// 				});
+	// 				music+="</ul>";
+	// 				$('#myDiv').append(music);
+	// 			}
+	// 		});
+	// 		return false;
+	// 	});
+	// });
+	$(function(){
+		$("button").click(function(){
+			htmlobj=$.ajax({url:"music.txt",async:false});
+			$("#myDiv").html(htmlobj.responseText);
+		});
+	});
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table id="myTable" style="border:1px solid red"></table>
+	<h2 id="h2"></h2>
+</body>
+<script>
+window.onload=function(){
+	var table=document.getElementById("myTable");
+	for(var i=0;i<5;i++){
+		var trs=document.createElement("tr");
+	for(var j=0;j<4;j++){
+		var tds=document.createElement("td");
+		var n=document.createTextNode("111111");
+		tds.appendChild(n);
+		trs.appendChild(tds);
+	}
+	table.appendChild(trs);
+}
+}
+	// var h = document.getElementById("h2");
+	// var p = document.createElement("p");
+	// var k = document.createTextNode("这边正常是显示的");
+	// p.appendChild(k);
+	// h.appendChild(p);
+</script>
+</html>

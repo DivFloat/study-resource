@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>It's so boring that i play a joke!</title>
+	<script>
+	window.onload=function(){
+	alert("Let's play the game!");
+	alert("上了贼船，可不是那么容易下船的~~~~")
+	var flag=true;
+	while(flag){
+		var str=prompt("首先，叫声爸爸听听");
+		if(str=="爸爸"){
+			alert("小伙子，乖乖听爸爸的话，爸爸不为难你。。。");
+			break;
+		}else{
+			alert("不听话可是会卡死的，要不你关机？啊哈哈哈~~~");
+		}
+	}
+	while(flag){
+		var str1=prompt("既然我是你爸爸了，就不为难你了，1+1=几？");
+		if(str1=="2"){
+			alert("不错不错，我儿实乃大才啊~~~");
+			break;
+		}else{
+			alert("我曹，我没你这个儿子，这种题都不会，打开窗户自裁吧，爸爸不会拦你的！！！！");
+		}
+	}
+	alert("这么玩似乎也没啥意思，嗯，先听首歌怎么样");
+	var audio=document.createElement("audio");
+	document.body.appendChild(audio);
+	audio.src="audio/audio.mp3";
+	audio.controls="controls";
+	audio.oncanplay=alert('监听到音频已经加载完成，时长4分13秒，等你听完咱们继续玩，进度条就不显示给你看了，气不气。。。。嘻嘻~~~~~~~~~~');
+	 audio.addEventListener("ended", function() {
+       alert("为了判定有没有播放完，浪费了我半天时间，草。。。，TMD，终于可以继续往下玩了T_T");
+       var flag=true;
+       while(flag){
+       		var str2=prompt("吗的，太晚了，心累，不想写了，叫声爹咱们就看个之前写的网页算了吧~~~~~");
+       		if(str2=="爹"){
+       			alert("妖孽，给你看个宝贝~~~");
+       			var a=document.createElement("a");
+       			var node2=document.createTextNode("点击这跳转。。。");
+       			a.appendChild(node2);
+       			document.body.appendChild(a);
+       			a.href="test/cube.html";
+       			break;
+       		}else{
+       			alert("都这个时候，连声爹都不愿意叫了吗？你的良心真的不会痛吗？？？");
+       		}
+       }
+    }, false)
+	
+}
+	// audio.volume=0.5;//0-1直接，0表示静音，1表示当前声音最大；
+	// setTimeout(function(){
+ //   		console.log(audio.duration);
+	// },1000);
+</script>
+</head>
+<body>
+	<!-- <audio src="audio/audio.mp3" controls="controls"></audio> -->
+</body>
+
+</html>

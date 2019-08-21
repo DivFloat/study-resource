@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="" id="myForm">
+		<label for="username">姓名:</label><input type="text" name="username" id="username" placeholder="请输入姓名"><br>
+		<label for="pwd">密码：</label><input type="password" name="pwd" id="pwd"><br>
+		<label for="phonenumber">手机号：</label><input type="text" name="phonenumber">
+		<button>序列化表单</button>
+	</form>
+	<table id="myTable" style="border: 1px solid #000">
+		<tr>
+			<th>id</th>
+			<th>name</th>
+			<th>age</th>
+			<th>hobby</th>
+		</tr>
+	</table>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+	$.ajax({
+		type: "POST",
+		url:"json.json",
+		datatype:"json",
+		success:function(data){
+			console.log("success!");
+			// var json = eval("("+data+")");
+			$.each(JSON.parse(data),function(i,n){//i表示的是{}括起来的组数的索引，n表示的是{}整个对象里的内容
+				// alert(n.name);
+					var trs=document.createElement("tr");
+					for(var k=0;k<4;k++){
+						var tds=document.createElement("td");
+						tds.append(n.name);
+						trs.append(tds);
+					}
+					console.log(n.name);
+					$("#myTable").append(trs);
+			});
+		}
+	});
+	$(function(){
+		$('button').click(function(){
+			alert($("#myForm").serialize());
+		});
+	});
+</script>
+</html>
